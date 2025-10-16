@@ -2,37 +2,37 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    # Run workflow on pushing or merging a pull request to master branch
-    branches: [ "master" ] 
+    branches: [ "master" ]
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     permissions:
-      pages: write      # allow publishing to GitHub Pages
-      id-token: write   # verify deployment source
-
+      pages: write
+      id-token: write
+      contents: read  # Add this
+    
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    
     steps:
-      # Get latest code
       - uses: actions/checkout@v4
-
-      # Set up Node.js
+      
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 22
           cache: npm
-
-      # Install dependencies and build
+      
       - run: npm install
       - run: npm run build
-
-      # Upload build folder (dist) as artifact
-      - name: Upload build output
+      
+      - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist # path to build output folder
-
-      # Deploy to GitHub Pages
-      - name: Deploy
+          path: dist
+      
+      - name: Deploy to GitHub Pages
+        id: deployment
         uses: actions/deploy-pages@v4
