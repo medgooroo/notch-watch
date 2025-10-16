@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/notch-watch/static/css/main.e6c13ad2.css",
+    "main.js": "/notch-watch/static/js/main.ae54b201.js",
+    "static/js/453.b755773e.chunk.js": "/notch-watch/static/js/453.b755773e.chunk.js",
+    "index.html": "/notch-watch/index.html",
+    "main.e6c13ad2.css.map": "/notch-watch/static/css/main.e6c13ad2.css.map",
+    "main.ae54b201.js.map": "/notch-watch/static/js/main.ae54b201.js.map",
+    "453.b755773e.chunk.js.map": "/notch-watch/static/js/453.b755773e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.ae54b201.js"
+  ]
+}
